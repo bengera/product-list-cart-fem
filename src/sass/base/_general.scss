@@ -6,5 +6,13 @@ body {
   font-size: fs(400);
   color: clr(neutral, 400);
   line-height: 1.5;
-  background-color: rgb(51, 143, 86);
+  background-color: $clr-rose-50;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: $clr-rose-900;
 }
