@@ -18,9 +18,14 @@ h1 {
 }
 
 .container {
-  max-width: 1216px;
   // border: 1px solid black;
   margin: 0 auto;
+  display: flex;
+}
+
+.menu {
+  max-width: 850px;
+  // border: 2px solid red;
 }
 
 .product-list {
@@ -90,5 +95,42 @@ h1 {
 
   &__image {
     border-radius: 10px;
+  }
+}
+
+// Shopping cart
+.cart {
+  padding: 1rem;
+  color: $clr-red;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  width: 385px;
+  background-color: $clr-white;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    padding: 1rem;
+  }
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  &__img {
+    width: 120px;
+    height: 100px;
+  }
+
+  &__text {
+    color: $clr-rose-500;
+    font-size: 14px;
+    font-weight: 500;
   }
 }
