@@ -17,11 +17,31 @@ h1 {
   color: $clr-rose-900;
 }
 
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  width: 160px;
+  max-width: 160px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
 .container {
   // border: 1px solid black;
   margin: 0 auto;
   display: flex;
 }
+
+//////////////////////////////////////////////
+////////////////Menu and list////////////////////
+//////////////////////////////////////////////
 
 .menu {
   max-width: 850px;
@@ -72,25 +92,17 @@ h1 {
   }
 
   &__button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
-    gap: 8px;
-    width: 160px;
-    max-width: 160px;
-    height: 44px;
     background: $clr-white;
     border: 1px solid $clr-rose-300;
     color: $clr-rose-900;
-    font-weight: 500;
-    font-size: 14px;
-    border-radius: 999px;
-    cursor: pointer;
     position: absolute;
     left: 50px;
     bottom: -20px;
+
+    &:hover {
+      border-color: $clr-red;
+      color: $clr-red;
+    }
   }
 
   &__image {
@@ -98,7 +110,10 @@ h1 {
   }
 }
 
-// Shopping cart
+//////////////////////////////////////////////
+////////////////Shopping cart////////////////////
+//////////////////////////////////////////////
+
 .cart {
   padding: 1rem;
   color: $clr-red;
@@ -134,3 +149,36 @@ h1 {
     font-weight: 500;
   }
 }
+
+//////////////////////////////////////////////
+////////////////Buttons////////////////////
+//////////////////////////////////////////////
+// .btn-active {
+//   display: flex;
+//   justify-content: space-around;
+//   background-color: $clr-red;
+//   border: 0;
+//   color: $clr-white;
+// }
+
+// .quantity-icon {
+//   width: 20px;
+//   height: 20px;
+//   border: 1px solid $clr-white;
+//   border-radius: 100%;
+//   padding: 3px;
+// }
+
+//  <button className="btn-active">
+//         <img
+//           className="quantity-icon"
+//           src="/assets/images/icon-decrement-quantity.svg"
+//           alt="quanitity decrement"
+//         />
+//         1
+//         <img
+//           className="quantity-icon"
+//           src="/assets/images/icon-increment-quantity.svg"
+//           alt="quanitity increment"
+//         />
+//         </button>
