@@ -17,7 +17,7 @@ h1 {
   color: $clr-rose-900;
 }
 
-button {
+.button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -120,9 +120,9 @@ button {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  width: 832px;
+  width: 384px;
   background-color: $clr-white;
-  height: 300px;
+  height: auto;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -156,7 +156,7 @@ button {
   font-weight: 100;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   gap: 1rem;
 
   &__total {
@@ -184,6 +184,61 @@ button {
 .environment-icon {
   width: 20px;
   height: 20px;
+}
+
+.items-container {
+  width: 100%;
+}
+
+.item-bottom {
+  border-bottom: 1px solid $clr-rose-100;
+  padding-bottom: 1rem;
+}
+
+.item {
+  &__name {
+    font-weight: 500;
+  }
+
+  &__quantity {
+    color: $clr-red;
+    font-weight: 600;
+  }
+
+  &__price {
+    color: $clr-rose-500;
+    font-weight: 400;
+  }
+
+  &__total-price {
+    font-weight: 500;
+    color: $clr-rose-500;
+  }
+
+  &__btn-delete {
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background-color: transparent;
+    align-self: center;
+    margin-left: auto;
+    border: 1px solid $clr-rose-400;
+    cursor: pointer;
+  }
+}
+
+.btn-delete-img {
+  margin: 0 auto;
+}
+
+.item-bottom {
+  display: flex;
+  justify-content: start;
+  gap: 25px;
+}
+
+.items__container .item:not(.item:first-of-type) {
+  margin-top: 1rem;
 }
 
 //////////////////////////////////////////////

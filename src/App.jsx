@@ -19,7 +19,7 @@ function App() {
                     alt="waffle"
                   />
 
-                  <button className="product-item__button">
+                  <button className="button product-item__button">
                     <img
                       src="\assets\images\icon-add-to-cart.svg"
                       alt="add-to-cart"
@@ -48,6 +48,26 @@ function App() {
           <p className="cart-empty__text">Your added items will appear here</p>
         </div> */}
         <div className="cart-items">
+          <div className="items__container">
+            <div className="item">
+              <div className="item-top">
+                <p className="item__name">Vanilla Bean Crème Brûlée</p>
+              </div>
+              <div className="item-bottom">
+                <p className="item__quantity">4x</p>
+                <p className="item__price">@ $7.00</p>
+                <p className="item__total-price">$28.00</p>
+                <button className="item__btn-delete">
+                  <img
+                    className="btn-delete-img"
+                    src="/assets/images/icon-remove-item.svg"
+                    alt="button delete"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+
           <div className="cart-items__total">
             <p>Order Total</p>
             <p className="cart-items__cost-total">$46.50</p>
@@ -63,7 +83,7 @@ function App() {
               delivery
             </p>
           </div>
-          <button className="btn-confirm">Confirm Order</button>
+          <button className="button btn-confirm">Confirm Order</button>
         </div>
       </div>
     </div>
