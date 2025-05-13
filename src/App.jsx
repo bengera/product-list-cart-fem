@@ -3,50 +3,84 @@ import data from "./data.json";
 
 function App() {
   const [products, setProducts] = useState(data);
+  const [cartItems, setCartItems] = useState([]);
 
   return (
     <div className="container">
       <div className="menu">
         <h1>Desserts</h1>
         <main>
-          <div className="product-list">
-            {products.map((item, idx) => (
-              <div className="product-item" key={idx}>
-                <div className="product-item__img-container">
-                  <img
-                    className="product-item__image"
-                    src={item.image.desktop}
-                    alt="waffle"
-                  />
-
-                  <button className="button product-item__button">
-                    <img
-                      src="\assets\images\icon-add-to-cart.svg"
-                      alt="add-to-cart"
-                    />
-                    Add to Cart
-                  </button>
-                </div>
-                <div className="product-item__info-container">
-                  <p className="product-item__type">{item.category}</p>
-                  <h2 className="product-item__name">{item.name}</h2>
-                  <p className="product-item__cost">${item.price.toFixed(2)}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ProductList
+            products={products}
+            setProducts={setProducts}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+          />
         </main>
       </div>
-      <div className="cart">
-        <h2 className="cart__heading">Your Cart (0)</h2>
-        {/* <div className="cart-empty">
-          <img
-            className="cart-empty__img"
-            src="assets/images/illustration-empty-cart.svg"
-            alt="empty cart"
-          />
-          <p className="cart-empty__text">Your added items will appear here</p>
-        </div> */}
+      <Cart cartItems={cartItems} />
+    </div>
+  );
+}
+
+function ProductList({ products, cartItems, setCartItems }) {
+  function handleAddItem(item) {
+    const newCartItem = {
+      id: item.name,
+      name: item.name,
+      price: item.price,
+      quantity: 1,
+    };
+
+    const existingItem = cartItems.find(
+      (cartItem) => cartItem.id === item.name
+    );
+
+    if (existingItem) return;
+
+    const updatedCart = [...cartItems, newCartItem];
+    setCartItems(updatedCart);
+  }
+
+  return (
+    <div className="product-list">
+      {products.map((item, idx) => (
+        <div className="product-item" key={idx}>
+          <div className="product-item__img-container">
+            <img
+              className="product-item__image"
+              src={item.image.desktop}
+              alt="waffle"
+            />
+
+            <button
+              className="button product-item__button"
+              onClick={() => handleAddItem(item, idx)}
+            >
+              <img
+                src="\assets\images\icon-add-to-cart.svg"
+                alt="add-to-cart"
+              />
+              Add to Cart
+            </button>
+          </div>
+          <div className="product-item__info-container">
+            <p className="product-item__type">{item.category}</p>
+            <h2 className="product-item__name">{item.name}</h2>
+            <p className="product-item__cost">${item.price.toFixed(2)}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Cart({ cartItems }) {
+  const numCartItems = cartItems.length;
+  return (
+    <div className="cart">
+      <h2 className="cart__heading">Your Cart (0)</h2>
+      {numCartItems > 0 ? (
         <div className="cart-items">
           <div className="items__container">
             <div className="item">
@@ -85,7 +119,16 @@ function App() {
           </div>
           <button className="button btn-confirm">Confirm Order</button>
         </div>
-      </div>
+      ) : (
+        <div className="cart-empty">
+          <img
+            className="cart-empty__img"
+            src="assets/images/illustration-empty-cart.svg"
+            alt="empty cart"
+          />
+          <p className="cart-empty__text">Your added items will appear here</p>
+        </div>
+      )}
     </div>
   );
 }
