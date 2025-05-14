@@ -254,34 +254,32 @@ h1 {
   height: 55px;
 }
 
-// .btn-active {
-//   display: flex;
-//   justify-content: space-around;
-//   background-color: $clr-red;
-//   border: 0;
-//   color: $clr-white;
-// width: 160px;
-//   max-width: 160px;
-// }
+.quantity-button {
+  display: flex;
+  justify-content: space-between;
+  background-color: $clr-red;
+  border: 0;
+  color: $clr-white;
+  width: 160px;
+  max-width: 160px;
+  position: absolute;
+  bottom: -20px;
+  left: 50px;
+}
 
-// .quantity-icon {
-//   width: 20px;
-//   height: 20px;
-//   border: 1px solid $clr-white;
-//   border-radius: 100%;
-//   padding: 3px;
-// }
+.btn-quantity {
+  &__decrement,
+  &__increment {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+  }
+}
 
-//  <button className="btn-active">
-//         <img
-//           className="quantity-icon"
-//           src="/assets/images/icon-decrement-quantity.svg"
-//           alt="quanitity decrement"
-//         />
-//         1
-//         <img
-//           className="quantity-icon"
-//           src="/assets/images/icon-increment-quantity.svg"
-//           alt="quanitity increment"
-//         />
-//         </button>
+.quantity-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $clr-white;
+  border-radius: 100%;
+  padding: 3px;
+}
