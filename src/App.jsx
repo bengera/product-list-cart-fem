@@ -34,6 +34,16 @@ function ProductList({ products, cartItems, setCartItems }) {
     );
   }
 
+  function handleDecrement(item) {
+    setCartItems((prev) =>
+      prev.map((cartItem) =>
+        cartItem.id === item.name
+          ? { ...cartItem, quantity: cartItem.quantity - 1 }
+          : cartItem
+      )
+    );
+  }
+
   function handleAddItem(item) {
     const newCartItem = {
       id: item.name,
@@ -70,7 +80,10 @@ function ProductList({ products, cartItems, setCartItems }) {
 
               {isInCart ? (
                 <div className="button quantity-button">
-                  <button className="btn-quantity__decrement">
+                  <button
+                    className="btn-quantity__decrement"
+                    onClick={() => handleDecrement(item)}
+                  >
                     <img
                       className="quantity-icon"
                       src="/assets/images/icon-decrement-quantity.svg"
