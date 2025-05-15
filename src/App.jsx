@@ -37,7 +37,7 @@ function ProductList({ products, cartItems, setCartItems }) {
   function handleDecrement(item) {
     setCartItems((prev) =>
       prev.map((cartItem) =>
-        cartItem.id === item.name
+        cartItem.id === item.name && cartItem.quantity > 1
           ? { ...cartItem, quantity: cartItem.quantity - 1 }
           : cartItem
       )
