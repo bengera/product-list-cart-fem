@@ -18,7 +18,7 @@ function App() {
           />
         </main>
       </div>
-      <Cart cartItems={cartItems} />
+      <Cart cartItems={cartItems} setCartItems={setCartItems} />
     </div>
   );
 }
@@ -131,7 +131,13 @@ function ProductList({ products, cartItems, setCartItems }) {
   );
 }
 
-function Cart({ cartItems }) {
+function Cart({ cartItems, setCartItems }) {
+  function removeItem(itemToRemove) {
+    const updatedArr = cartItems.filter(
+      (cartItem) => cartItem.id !== itemToRemove.id
+    );
+    setCartItems(updatedArr);
+  }
   const orderTotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -154,7 +160,10 @@ function Cart({ cartItems }) {
                   <p className="item__total-price">
                     ${(item.price * item.quantity).toFixed(2)}
                   </p>
-                  <button className="item__btn-delete">
+                  <button
+                    className="item__btn-delete"
+                    onClick={() => removeItem(item)}
+                  >
                     <img
                       className="btn-delete-img"
                       src="/assets/images/icon-remove-item.svg"
