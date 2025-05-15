@@ -24,6 +24,16 @@ function App() {
 }
 
 function ProductList({ products, cartItems, setCartItems }) {
+  function handleIncrement(item) {
+    setCartItems((prev) =>
+      prev.map((cartItem) =>
+        cartItem.id === item.name
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
+      )
+    );
+  }
+
   function handleAddItem(item) {
     const newCartItem = {
       id: item.name,
@@ -67,8 +77,14 @@ function ProductList({ products, cartItems, setCartItems }) {
                       alt=""
                     />
                   </button>
-                  <span>1</span>
-                  <button className="btn-quantity__increment">
+                  <span>
+                    {cartItems.find((cartItem) => cartItem.id === item.name)
+                      ?.quantity || 1}
+                  </span>
+                  <button
+                    className="btn-quantity__increment"
+                    onClick={() => handleIncrement(item)}
+                  >
                     <img
                       className="quantity-icon"
                       src="/assets/images/icon-increment-quantity.svg"
@@ -116,7 +132,7 @@ function Cart({ cartItems }) {
                   <p className="item__name">{item.name}</p>
                 </div>
                 <div className="item-bottom">
-                  <p className="item__quantity">{item.quantity}</p>
+                  <p className="item__quantity">{item.quantity}x</p>
                   <p className="item__price">@ ${item.price.toFixed(2)}</p>
                   <p className="item__total-price">$28.00</p>
                   <button className="item__btn-delete">
