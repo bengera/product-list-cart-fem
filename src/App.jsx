@@ -132,6 +132,10 @@ function ProductList({ products, cartItems, setCartItems }) {
 }
 
 function Cart({ cartItems }) {
+  const orderTotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
   const numCartItems = cartItems.length;
   return (
     <div className="cart">
@@ -148,7 +152,7 @@ function Cart({ cartItems }) {
                   <p className="item__quantity">{item.quantity}x</p>
                   <p className="item__price">@ ${item.price.toFixed(2)}</p>
                   <p className="item__total-price">
-                    ${item.price.toFixed(2) * item.quantity}
+                    ${(item.price * item.quantity).toFixed(2)}
                   </p>
                   <button className="item__btn-delete">
                     <img
@@ -164,7 +168,7 @@ function Cart({ cartItems }) {
 
           <div className="cart-items__total">
             <p>Order Total</p>
-            <p className="cart-items__cost-total">$46.50</p>
+            <p className="cart-items__cost-total">${orderTotal.toFixed(2)}</p>
           </div>
           <div className="environment-message">
             <img
