@@ -147,7 +147,9 @@ function Cart({ cartItems }) {
                 <div className="item-bottom">
                   <p className="item__quantity">{item.quantity}x</p>
                   <p className="item__price">@ ${item.price.toFixed(2)}</p>
-                  <p className="item__total-price">$28.00</p>
+                  <p className="item__total-price">
+                    ${item.price.toFixed(2) * item.quantity}
+                  </p>
                   <button className="item__btn-delete">
                     <img
                       className="btn-delete-img"
