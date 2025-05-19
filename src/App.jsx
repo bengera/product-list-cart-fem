@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div className="modal">Confirm</div>
+      {overlay === true ? <div className="modal">Confirm</div> : null}
       <div className={overlay === true ? "overlay show" : "overlay"}></div>
       <div className="container">
         <div className="menu">
