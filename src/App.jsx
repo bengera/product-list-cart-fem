@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "./data.json";
 
 function App() {
@@ -6,8 +6,15 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [overlay, setOverlay] = useState(false);
 
+  useEffect(() => {
+    overlay === true
+      ? (document.body.className = "body fixed")
+      : (document.body.className = "");
+  });
+
   return (
     <>
+      <div className="modal">Confirm</div>
       <div className={overlay === true ? "overlay show" : "overlay"}></div>
       <div className="container">
         <div className="menu">
