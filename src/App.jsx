@@ -14,7 +14,14 @@ function App() {
 
   return (
     <>
-      {overlay === true ? <div className="modal">Confirm</div> : null}
+      {overlay === true ? (
+        <div className="modal">
+          <img
+            src="/assets/images/icon-order-confirmed.svg"
+            alt="order confirmed"
+          />
+        </div>
+      ) : null}
       <div className={overlay === true ? "overlay show" : "overlay"}></div>
       <div className="container">
         <div className="menu">
@@ -147,7 +154,7 @@ function ProductList({ products, cartItems, setCartItems }) {
   );
 }
 
-function Cart({ cartItems, setCartItems, overlay, setOverlay }) {
+function Cart({ cartItems, setCartItems, setOverlay }) {
   function removeItem(itemToRemove) {
     const updatedArr = cartItems.filter(
       (cartItem) => cartItem.id !== itemToRemove.id
