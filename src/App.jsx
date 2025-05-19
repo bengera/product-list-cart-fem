@@ -4,22 +4,31 @@ import data from "./data.json";
 function App() {
   const [products, setProducts] = useState(data);
   const [cartItems, setCartItems] = useState([]);
+  const [overlay, setOverlay] = useState(false);
 
   return (
-    <div className="container">
-      <div className="menu">
-        <h1>Desserts</h1>
-        <main>
-          <ProductList
-            products={products}
-            setProducts={setProducts}
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-          />
-        </main>
+    <>
+      <div className={overlay === true ? "overlay show" : "overlay"}></div>
+      <div className="container">
+        <div className="menu">
+          <h1>Desserts</h1>
+          <main>
+            <ProductList
+              products={products}
+              setProducts={setProducts}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          </main>
+        </div>
+        <Cart
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+          overlay={overlay}
+          setOverlay={setOverlay}
+        />
       </div>
-      <Cart cartItems={cartItems} setCartItems={setCartItems} />
-    </div>
+    </>
   );
 }
 
@@ -131,7 +140,7 @@ function ProductList({ products, cartItems, setCartItems }) {
   );
 }
 
-function Cart({ cartItems, setCartItems }) {
+function Cart({ cartItems, setCartItems, overlay, setOverlay }) {
   function removeItem(itemToRemove) {
     const updatedArr = cartItems.filter(
       (cartItem) => cartItem.id !== itemToRemove.id
@@ -142,6 +151,12 @@ function Cart({ cartItems, setCartItems }) {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  function handleConfirm() {
+    console.log("Handling confirmation order");
+    setOverlay((prev) => !prev);
+  }
+
   const numCartItems = cartItems.length;
   return (
     <div className="cart">
@@ -190,7 +205,12 @@ function Cart({ cartItems, setCartItems }) {
               delivery
             </p>
           </div>
-          <button className="button btn-confirm">Confirm Order</button>
+          <button
+            className="button btn-confirm"
+            onClick={() => handleConfirm()}
+          >
+            Confirm Order
+          </button>
         </div>
       ) : (
         <div className="cart-empty">

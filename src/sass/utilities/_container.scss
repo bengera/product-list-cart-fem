@@ -1,17 +1,17 @@
 @use "../abstracts/" as *;
 
-.container {
-  --padding: #{$container-inline-padding} * 2;
-  --max-width: #{$container-max-width-wide};
+// .container {
+//   --padding: #{$container-inline-padding} * 2;
+//   --max-width: #{$container-max-width-wide};
 
-  width: min(100% - var(--padding), var(--max-width));
-  margin-inline: auto;
-}
+//   width: min(100% - var(--padding), var(--max-width));
+//   margin-inline: auto;
+// }
 
-.container[data-type="narrow"] {
-  --max-width: #{$container-max-width-narrow};
-}
+// .container[data-type="narrow"] {
+//   --max-width: #{$container-max-width-narrow};
+// }
 
-.container[data-type="wide"] {
-  --max-width: #{$container-max-width-wide};
-}
+// .container[data-type="wide"] {
+//   --max-width: #{$container-max-width-wide};
+// }
