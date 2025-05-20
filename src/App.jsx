@@ -13,6 +13,14 @@ function App() {
       : (document.body.className = "");
   });
 
+  useEffect(() => {
+    const total = cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    setOrderTotal(total.toFixed(2));
+  }, [cartItems]);
+
   return (
     <>
       {overlay === true ? (
@@ -53,7 +61,7 @@ function App() {
             ))}
             <div className="modal__order-total-container">
               <p className="modal__order-text">Order Total:</p>
-              <p className="modal__order-total-number">$0</p>
+              <p className="modal__order-total-number">${orderTotal}</p>
             </div>
           </div>
         </div>
@@ -76,6 +84,7 @@ function App() {
           setCartItems={setCartItems}
           overlay={overlay}
           setOverlay={setOverlay}
+          orderTotal={orderTotal}
         />
       </div>
     </>
@@ -191,17 +200,13 @@ function ProductList({ products, cartItems, setCartItems }) {
   );
 }
 
-function Cart({ cartItems, setCartItems, setOverlay }) {
+function Cart({ cartItems, setCartItems, setOverlay, orderTotal }) {
   function removeItem(itemToRemove) {
     const updatedArr = cartItems.filter(
       (cartItem) => cartItem.id !== itemToRemove.id
     );
     setCartItems(updatedArr);
   }
-  const orderTotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
 
   function handleConfirm() {
     console.log("Handling confirmation order");
@@ -243,7 +248,7 @@ function Cart({ cartItems, setCartItems, setOverlay }) {
 
           <div className="cart-items__total">
             <p>Order Total</p>
-            <p className="cart-items__cost-total">${orderTotal.toFixed(2)}</p>
+            <p className="cart-items__cost-total">${orderTotal}</p>
           </div>
           <div className="environment-message">
             <img
