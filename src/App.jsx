@@ -4,7 +4,7 @@ import data from "./data.json";
 function App() {
   const [products, setProducts] = useState(data);
   const [cartItems, setCartItems] = useState([]);
-  const [overlay, setOverlay] = useState(false);
+  const [overlay, setOverlay] = useState(true);
 
   useEffect(() => {
     overlay === true
@@ -20,6 +20,33 @@ function App() {
             src="/assets/images/icon-order-confirmed.svg"
             alt="order confirmed"
           />
+          <h2 className="modal__heading">Order Confirmed</h2>
+          <p className="modal__message">We hope you enjoy your food</p>
+          <div className="modal__items-list">
+            <div className="modal__item-block">
+              <div className="modal__left-cols">
+                <div className="modal__col-1">
+                  <img
+                    src="/assets/images/image-tiramisu-desktop.jpg"
+                    alt=""
+                    className="modal__item-img"
+                  />
+                </div>
+                <div className="modal__col-2">
+                  <div className="modal__col-2-top">
+                    <p className="modal__item-name">Classic Tiramisu</p>
+                  </div>
+                  <div className="modal__col-2-bottom">
+                    <p className="modal__quantity">x1</p>
+                    <p className="modal__price">@$5.50</p>
+                  </div>
+                </div>
+              </div>
+              <div className="modal__col-3">
+                <p className="modal__total">$46.50</p>
+              </div>
+            </div>
+          </div>
         </div>
       ) : null}
       <div className={overlay === true ? "overlay show" : "overlay"}></div>
