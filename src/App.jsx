@@ -5,6 +5,7 @@ function App() {
   const [products, setProducts] = useState(data);
   const [cartItems, setCartItems] = useState([]);
   const [overlay, setOverlay] = useState(false);
+  const [orderTotal, setOrderTotal] = useState(0);
 
   useEffect(() => {
     overlay === true
