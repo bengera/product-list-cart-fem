@@ -44,7 +44,9 @@ function App() {
                   </div>
                 </div>
                 <div className="modal__col-3">
-                  <p className="modal__total">$46.50</p>
+                  <p className="modal__total">
+                    ${(item.quantity * item.price).toFixed(2)}
+                  </p>
                 </div>
               </div>
             ))}
