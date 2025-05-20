@@ -50,6 +50,10 @@ function App() {
                 </div>
               </div>
             ))}
+            <div className="modal__order-total-container">
+              <p className="modal__order-text">Order Total:</p>
+              <p className="modal__order-total-number">$0</p>
+            </div>
           </div>
         </div>
       ) : null}

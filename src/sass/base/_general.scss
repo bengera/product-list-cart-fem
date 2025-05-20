@@ -398,4 +398,21 @@ h1 {
     color: $clr-rose-900;
     font-weight: 600;
   }
+
+  &__order-total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.3rem;
+  }
+
+  &__order-text {
+    color: $clr-rose-900;
+  }
+
+  &__order-total-number {
+    font-weight: 700;
+    font-size: 24px;
+    color: $clr-rose-900;
+  }
 }
