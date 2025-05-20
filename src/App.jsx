@@ -4,7 +4,7 @@ import data from "./data.json";
 function App() {
   const [products, setProducts] = useState(data);
   const [cartItems, setCartItems] = useState([]);
-  const [overlay, setOverlay] = useState(true);
+  const [overlay, setOverlay] = useState(false);
 
   useEffect(() => {
     overlay === true
@@ -23,29 +23,31 @@ function App() {
           <h2 className="modal__heading">Order Confirmed</h2>
           <p className="modal__message">We hope you enjoy your food</p>
           <div className="modal__items-list">
-            <div className="modal__item-block">
-              <div className="modal__left-cols">
-                <div className="modal__col-1">
-                  <img
-                    src="/assets/images/image-tiramisu-desktop.jpg"
-                    alt=""
-                    className="modal__item-img"
-                  />
+            {cartItems.map((item, idx) => (
+              <div className="modal__item-block" key={idx}>
+                <div className="modal__left-cols">
+                  <div className="modal__col-1">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="modal__item-img"
+                    />
+                  </div>
+                  <div className="modal__col-2">
+                    <div className="modal__col-2-top">
+                      <p className="modal__item-name">{item.name}</p>
+                    </div>
+                    <div className="modal__col-2-bottom">
+                      <p className="modal__quantity">x{item.quantity}</p>
+                      <p className="modal__price">${item.price.toFixed(2)}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="modal__col-2">
-                  <div className="modal__col-2-top">
-                    <p className="modal__item-name">Classic Tiramisu</p>
-                  </div>
-                  <div className="modal__col-2-bottom">
-                    <p className="modal__quantity">x1</p>
-                    <p className="modal__price">@$5.50</p>
-                  </div>
+                <div className="modal__col-3">
+                  <p className="modal__total">$46.50</p>
                 </div>
               </div>
-              <div className="modal__col-3">
-                <p className="modal__total">$46.50</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       ) : null}
@@ -100,6 +102,7 @@ function ProductList({ products, cartItems, setCartItems }) {
       name: item.name,
       price: item.price,
       quantity: 1,
+      img: item.image.desktop,
     };
 
     const existingItem = cartItems.find(
