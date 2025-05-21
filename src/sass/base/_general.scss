@@ -274,6 +274,10 @@ h1 {
   color: $clr-white;
   width: 100%;
   height: 55px;
+
+  &:hover {
+    background-color: #b4330c;
+  }
 }
 
 .quantity-button {

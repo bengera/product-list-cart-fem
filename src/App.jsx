@@ -72,7 +72,7 @@ function App() {
               </div>
             ))}
             <div className="modal__order-total-container">
-              <p className="modal__order-text">Order Total:</p>
+              <p className="modal__order-text">Order Total</p>
               <p className="modal__order-total-number">${orderTotal}</p>
             </div>
           </div>
