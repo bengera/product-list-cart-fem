@@ -37,7 +37,13 @@ function App() {
           />
           <h2 className="modal__heading">Order Confirmed</h2>
           <p className="modal__message">We hope you enjoy your food</p>
-          <div className="modal__items-list">
+          <div
+            className={
+              cartItems.length > 4
+                ? "modal__items-list scroll"
+                : "modal__items-list"
+            }
+          >
             {cartItems.map((item, idx) => (
               <div className="modal__item-block" key={idx}>
                 <div className="modal__left-cols">

@@ -342,11 +342,6 @@ h1 {
     border-radius: 10px;
   }
 
-  &__items.list.scroll {
-    // height: 400px;
-    // overflow-y: auto;
-  }
-
   &__item-block {
     padding: 1rem;
     // border: 2px solid black;
@@ -426,4 +421,9 @@ h1 {
     margin-top: 2rem;
     font-size: 16px;
   }
+}
+
+.scroll {
+  height: 400px;
+  overflow-y: auto;
 }
