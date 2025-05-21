@@ -317,7 +317,7 @@ h1 {
 
   left: 50%;
   transform: translate(-35%, 0);
-  top: 15%;
+  top: 10%;
   background-color: white;
   border: 0;
   width: 592px;
@@ -340,6 +340,11 @@ h1 {
     padding: 0.4rem 1rem;
     background-color: $clr-rose-50;
     border-radius: 10px;
+  }
+
+  &__items.list.scroll {
+    // height: 400px;
+    // overflow-y: auto;
   }
 
   &__item-block {
