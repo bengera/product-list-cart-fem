@@ -155,7 +155,14 @@ function ProductList({ products, cartItems, setCartItems }) {
 
         return (
           <div className="product-item" key={idx}>
-            <div className="product-item__img-container">
+            <div
+              className="product-item__img-container"
+              style={
+                isInCart
+                  ? { border: "2px solid #c73b0f", borderRadius: "10px" }
+                  : undefined
+              }
+            >
               <img
                 className="product-item__image"
                 src={item.image.desktop}

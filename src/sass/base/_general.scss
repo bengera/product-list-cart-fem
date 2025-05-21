@@ -64,14 +64,17 @@ h1 {
 
 .menu {
   max-width: 850px;
-  // border: 2px solid red;
 }
 
 .product-list {
-  // border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 24px;
+
+  @include mq(tablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .product-item {
@@ -79,6 +82,8 @@ h1 {
 
   &__img-container {
     position: relative;
+    border: 2px solid $clr-rose-50;
+    border-radius: 10px;
   }
 
   &__info-container {
@@ -136,7 +141,7 @@ h1 {
 //////////////////////////////////////////////
 
 .cart {
-  padding: 1rem;
+  padding: 1.5rem;
   color: $clr-red;
   font-weight: 700;
   font-size: 24px;
@@ -159,6 +164,7 @@ h1 {
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding: 1.5rem;
   &__img {
     width: 120px;
     height: 100px;
@@ -242,7 +248,7 @@ h1 {
     height: 20px;
     border-radius: 999px;
     background-color: transparent;
-    align-self: center;
+    // align-self: center;
     margin-left: auto;
     border: 1px solid $clr-rose-400;
     cursor: pointer;
@@ -256,11 +262,11 @@ h1 {
 .item-bottom {
   display: flex;
   justify-content: start;
-  gap: 25px;
+  gap: 14px;
 }
 
 .items__container .item:not(.item:first-of-type) {
-  margin-top: 1rem;
+  margin-top: 0.6rem;
 }
 
 //////////////////////////////////////////////
