@@ -267,7 +267,8 @@ h1 {
 ////////////////Buttons////////////////////
 //////////////////////////////////////////////
 
-.btn-confirm {
+.btn-confirm,
+.modal__button {
   border: 0;
   background-color: $clr-red;
   color: $clr-white;
@@ -414,5 +415,10 @@ h1 {
     font-weight: 700;
     font-size: 24px;
     color: $clr-rose-900;
+  }
+
+  &__button {
+    margin-top: 2rem;
+    font-size: 16px;
   }
 }

@@ -7,6 +7,12 @@ function App() {
   const [overlay, setOverlay] = useState(false);
   const [orderTotal, setOrderTotal] = useState(0);
 
+  function handleReset() {
+    setOverlay(false);
+    setCartItems([]);
+    setOrderTotal(0);
+  }
+
   useEffect(() => {
     overlay === true
       ? (document.body.className = "body fixed")
@@ -64,6 +70,9 @@ function App() {
               <p className="modal__order-total-number">${orderTotal}</p>
             </div>
           </div>
+          <button className="button modal__button" onClick={handleReset}>
+            Start new order
+          </button>
         </div>
       ) : null}
       <div className={overlay === true ? "overlay show" : "overlay"}></div>
