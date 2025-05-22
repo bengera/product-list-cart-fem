@@ -163,11 +163,22 @@ function ProductList({ products, cartItems, setCartItems }) {
                   : undefined
               }
             >
-              <img
-                className="product-item__image"
-                src={item.image.desktop}
-                alt={item.name}
-              />
+              <picture>
+                <source
+                  media="(max-width: 25.75em)"
+                  srcSet={item.image.mobile}
+                />
+                <source
+                  media="(max-width: 67.5em)"
+                  srcSet={item.image.tablet}
+                />
+
+                <img
+                  className="product-item__image"
+                  src={item.image.desktop}
+                  alt={item.name}
+                />
+              </picture>
 
               {isInCart ? (
                 <div className="button quantity-button">
