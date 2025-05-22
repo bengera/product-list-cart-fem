@@ -84,6 +84,10 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
+
+  @include mq(mobile) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .product-item {
@@ -91,7 +95,14 @@ h1 {
 
   @include mq(tablet) {
     width: 234px;
+
     justify-self: center;
+  }
+
+  @include mq(mobile) {
+    // width: 327px;
+    // min-width: 289px;
+    width: 100%;
   }
 
   &__img-container {
@@ -134,10 +145,11 @@ h1 {
     border: 1px solid $clr-rose-300;
     color: $clr-rose-900;
     position: absolute;
-    left: 50px;
     bottom: -20px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     width: 160px;
-    max-width: 160px;
 
     &:hover {
       border-color: $clr-red;
@@ -311,10 +323,13 @@ h1 {
   border: 0;
   color: $clr-white;
   width: 160px;
-  max-width: 160px;
+  bottom: -20px;
   position: absolute;
   bottom: -20px;
-  left: 50px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 160px;
 }
 
 .btn-quantity {
@@ -350,6 +365,10 @@ h1 {
   border: 0;
   width: 592px;
   border-radius: 10px;
+
+  @include mq(tablet) {
+    transform: translate(-45%, 0);
+  }
 
   &__heading {
     font-size: 40px;
