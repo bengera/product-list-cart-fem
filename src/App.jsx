@@ -133,7 +133,7 @@ function ProductList({ products, cartItems, setCartItems }) {
       name: item.name,
       price: item.price,
       quantity: 1,
-      img: item.image.desktop,
+      img: item.image.thumbnail,
     };
 
     const existingItem = cartItems.find(
