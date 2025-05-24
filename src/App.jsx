@@ -44,8 +44,8 @@ function App() {
                 : "modal__items-list"
             }
           >
-            {cartItems.map((item, idx) => (
-              <div className="modal__item-block" key={idx}>
+            {cartItems.map((item) => (
+              <div className="modal__item-block" key={item.name}>
                 <div className="modal__left-cols">
                   <div className="modal__col-1">
                     <img
