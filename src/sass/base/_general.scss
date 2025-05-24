@@ -482,4 +482,8 @@ h1 {
 .scroll {
   height: 400px;
   overflow-y: auto;
+
+  @include mq(mobile) {
+    height: 350px;
+  }
 }
