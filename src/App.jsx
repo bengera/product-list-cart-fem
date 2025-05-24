@@ -39,7 +39,7 @@ function App() {
           <p className="modal__message">We hope you enjoy your food</p>
           <div
             className={
-              cartItems.length > 4
+              cartItems.length > 3
                 ? "modal__items-list scroll"
                 : "modal__items-list"
             }
