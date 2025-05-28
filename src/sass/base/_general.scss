@@ -370,7 +370,7 @@ h1 {
   border-radius: 10px;
 
   @include mq(tablet) {
-    transform: translate(-45%, 0);
+    transform: translate(-50%, 70%);
   }
 
   @include mq(mobile) {
