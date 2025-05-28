@@ -14,8 +14,8 @@ This is a responsive shopping cart interface built with React. Users can add, re
 
 ---
 
-![desktop view](/desktop-screenshot.png) |
-![modal view](/modal-screenshot.png) |
+![desktop view](/desktop-screenshot.png)
+![modal view](/modal-screenshot.png)
 
 ## ✨ Features
 
