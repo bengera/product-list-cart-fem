@@ -11,6 +11,9 @@ body {
 
 body.fixed {
   // position: fixed;
+  // @include mq(tablet) {
+  //   position: fixed;
+  // }
   overflow: hidden;
 }
 
@@ -370,7 +373,8 @@ h1 {
   border-radius: 10px;
 
   @include mq(tablet) {
-    transform: translate(-50%, 70%);
+    // transform: translate(-50%, 30%);
+    transform: translate(-50%, 140%);
   }
 
   @include mq(mobile) {
