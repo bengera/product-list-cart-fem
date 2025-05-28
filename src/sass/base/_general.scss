@@ -9,16 +9,12 @@ body {
   background-color: $clr-rose-50;
 }
 
-body.fixed {
-  position: fixed;
-  // @include mq(tablet) {
-  //   position: fixed;
-  // }
-  // @include mq(tablet) {
-  //   position: fixed;
-  // }
-  // overflow: hidden;
-}
+// body.fixed {
+//   position: fixed;
+//   @include mq(tablet) {
+//     position: relative;
+//   }
+// }
 
 h1 {
   font-size: 40px;
@@ -69,6 +65,7 @@ h1 {
   @include mq(tablet) {
     flex-direction: column;
     padding: 1rem;
+    justify-content: normal;
   }
 }
 
@@ -109,8 +106,6 @@ h1 {
   }
 
   @include mq(mobile) {
-    // width: 327px;
-    // min-width: 289px;
     width: 100%;
   }
 
@@ -368,7 +363,7 @@ h1 {
   padding: 2rem;
 
   left: 50%;
-  transform: translate(-35%, 0);
+  transform: translate(-50%, 0);
   top: 10%;
   background-color: white;
   border: 0;
@@ -410,7 +405,7 @@ h1 {
 
   &__item-block {
     padding: 1rem;
-    // border: 2px solid black;
+
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid $clr-rose-100;

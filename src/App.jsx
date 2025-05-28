@@ -17,10 +17,13 @@ function App() {
   }
 
   useEffect(() => {
-    overlay === true
-      ? (document.body.className = "body fixed")
-      : (document.body.className = "");
-  });
+    if (overlay) {
+      window.scrollTo(0, 0);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [overlay]);
 
   useEffect(() => {
     const total = cartItems.reduce(
