@@ -10,7 +10,8 @@ body {
 }
 
 body.fixed {
-  position: fixed;
+  // position: fixed;
+  overflow: hidden;
 }
 
 h1 {
