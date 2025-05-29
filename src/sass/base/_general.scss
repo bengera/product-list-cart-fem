@@ -351,6 +351,7 @@ h1 {
   border: 1px solid $clr-white;
   border-radius: 100%;
   padding: 3px;
+  color: white;
 }
 
 //////////////////////////////////////////////
@@ -490,5 +491,12 @@ h1 {
 
   @include mq(mobile) {
     padding-top: 0.2rem;
+  }
+}
+
+.quantity-icon {
+  &:hover {
+    background-color: white;
+    color: $clr-red;
   }
 }
