@@ -1,0 +1,68 @@
+@use "../abstracts/" as *;
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-confirm,
+.modal__button {
+  border: 0;
+  background-color: $clr-red;
+  color: $clr-white;
+  width: 100%;
+  height: 55px;
+
+  &:hover {
+    background-color: #b4330c;
+  }
+}
+
+.quantity-button {
+  display: flex;
+  justify-content: space-between;
+  background-color: $clr-red;
+  border: 0;
+  color: $clr-white;
+  width: 160px;
+  bottom: -20px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 160px;
+}
+
+.btn-quantity {
+  &__decrement,
+  &__increment {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+.quantity-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $clr-white;
+  border-radius: 100%;
+  padding: 3px;
+  color: white;
+}
+
+.quantity-icon {
+  &:hover {
+    background-color: white;
+    color: $clr-red;
+  }
+}

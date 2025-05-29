@@ -1,0 +1,93 @@
+@use "../abstracts/" as *;
+.menu {
+  max-width: 850px;
+  @include mq(tablet) {
+    margin-bottom: 32px;
+  }
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  @include mq(tablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  @include mq(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-item {
+  width: 250px;
+
+  @include mq(tablet) {
+    width: 234px;
+
+    justify-self: center;
+  }
+
+  @include mq(mobile) {
+    width: 100%;
+  }
+
+  &__img-container {
+    position: relative;
+    border: 2px solid $clr-rose-50;
+    border-radius: 10px;
+  }
+
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 2rem;
+  }
+
+  &__type {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: $clr-rose-500;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+
+    color: $clr-rose-900;
+  }
+
+  &__cost {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: $clr-red;
+  }
+
+  &__button {
+    background: $clr-white;
+    border: 1px solid $clr-rose-300;
+    color: $clr-rose-900;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 160px;
+
+    &:hover {
+      border-color: $clr-red;
+      color: $clr-red;
+    }
+  }
+
+  &__image {
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,118 @@
+@use "../abstracts/" as *;
+
+.modal {
+  position: absolute;
+  z-index: 1000;
+  padding: 2rem;
+
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 10%;
+  background-color: white;
+  border: 0;
+  width: 592px;
+  border-radius: 10px;
+
+  @include mq(tablet) {
+    transform: translate(-45%, 0%);
+  }
+
+  @include mq(mobile) {
+    position: fixed;
+    padding: 1.5rem;
+    top: 0;
+
+    width: 100%;
+    transform: translate(-50%, 0%);
+  }
+
+  &__heading {
+    font-size: 40px;
+    font-weight: 700;
+    color: $clr-rose-900;
+    margin-top: 1rem;
+  }
+
+  &__message {
+    font-size: 16px;
+    color: $clr-rose-500;
+  }
+
+  &__items-list {
+    margin-top: 1.5rem;
+    padding: 0.4rem 1rem;
+    background-color: $clr-rose-50;
+    border-radius: 10px;
+  }
+
+  &__item-block {
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $clr-rose-100;
+    padding: 1rem 0.3rem;
+  }
+
+  &__item-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  &__left-cols {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__item-name {
+    color: $clr-rose-900;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  &__quantity {
+    color: $clr-red;
+    font-weight: 600;
+  }
+
+  &__price {
+    color: $clr-rose-500;
+  }
+
+  &__col-2-bottom {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__col-3 {
+    align-self: center;
+  }
+
+  &__total {
+    color: $clr-rose-900;
+    font-weight: 600;
+  }
+
+  &__order-total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.3rem;
+  }
+
+  &__order-text {
+    color: $clr-rose-900;
+  }
+
+  &__order-total-number {
+    font-weight: 700;
+    font-size: 24px;
+    color: $clr-rose-900;
+  }
+
+  &__button {
+    margin-top: 2rem;
+    font-size: 16px;
+  }
+}

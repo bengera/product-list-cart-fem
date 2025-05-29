@@ -1,0 +1,140 @@
+@use "../abstracts/" as *;
+
+.cart {
+  padding: 1.5rem;
+  color: $clr-red;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  width: 384px;
+  background-color: $clr-white;
+  height: calc(100% + 100px);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  @include mq(tablet) {
+    width: 100%;
+  }
+
+  &__heading {
+    padding: 1rem 0;
+  }
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1.5rem;
+  &__img {
+    width: 120px;
+    height: 100px;
+  }
+
+  &__text {
+    color: $clr-rose-500;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.cart-items {
+  font-size: 16px;
+  color: $clr-rose-900;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__cost-total {
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
+
+.environment-message {
+  padding: 1rem;
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  background-color: $clr-rose-50;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.environment-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.items-container {
+  width: 100%;
+}
+
+.item-bottom {
+  border-bottom: 1px solid $clr-rose-100;
+  padding-bottom: 1rem;
+}
+
+.item {
+  &__name {
+    font-weight: 500;
+  }
+
+  &__quantity {
+    color: $clr-red;
+    font-weight: 600;
+  }
+
+  &__price {
+    color: $clr-rose-500;
+    font-weight: 400;
+  }
+
+  &__total-price {
+    font-weight: 600;
+    color: $clr-rose-500;
+  }
+
+  &__btn-delete {
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background-color: transparent;
+    // align-self: center;
+    margin-left: auto;
+    border: 1px solid $clr-rose-400;
+    cursor: pointer;
+  }
+}
+
+.btn-delete-img {
+  @include transition();
+  margin: 0 auto;
+  color: $clr-rose-400;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.item-bottom {
+  display: flex;
+  justify-content: start;
+  gap: 14px;
+}
+
+.items__container .item:not(.item:first-of-type) {
+  margin-top: 0.6rem;
+}
