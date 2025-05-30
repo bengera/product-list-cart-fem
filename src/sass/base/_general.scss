@@ -1,5 +1,9 @@
 @use "../abstracts/" as *;
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: $ff-base;
   font-weight: $fw-400;

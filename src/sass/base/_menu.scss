@@ -14,7 +14,8 @@
   @include mq(tablet) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 15px;
+    grid-row-gap: 20px;
   }
 
   @include mq(mobile) {
