@@ -126,6 +126,10 @@
 
   &:hover {
     color: black;
+
+    @include mq(tablet) {
+      color: $clr-rose-400;
+    }
   }
 }
 
