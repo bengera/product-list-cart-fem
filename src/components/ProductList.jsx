@@ -57,7 +57,7 @@ export function ProductList({ products, cartItems, setCartItems }) {
             >
               <picture>
                 <source
-                  media="(max-width: 25.75em)"
+                  media="(max-width: 30.75em)"
                   srcSet={item.image.mobile}
                 />
                 <source
