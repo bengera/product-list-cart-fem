@@ -23,6 +23,10 @@
 
   &:hover {
     background-color: #b4330c;
+
+    @include mq(tablet) {
+      background-color: $clr-red;
+    }
   }
 }
 
@@ -64,5 +68,10 @@
   &:hover {
     background-color: white;
     color: $clr-red;
+
+    @include mq(tablet) {
+      color: white;
+      background-color: $clr-red;
+    }
   }
 }

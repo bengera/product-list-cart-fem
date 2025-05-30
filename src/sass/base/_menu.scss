@@ -85,6 +85,11 @@
     &:hover {
       border-color: $clr-red;
       color: $clr-red;
+
+      @include mq(tablet) {
+        border: 1px solid $clr-rose-300;
+        color: $clr-rose-900;
+      }
     }
   }
 
