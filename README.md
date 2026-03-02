@@ -17,7 +17,7 @@ This is a responsive shopping cart interface built with React. Users can add, re
 ![desktop view](/desktop-screenshot.png)
 ![modal view](/modal-screenshot.png)
 
-## ✨ Features
+## Features
 
 - **Product List** – Display and render items from a JSON file
 - **Cart System** – Add/remove items, update quantities, and view totals
@@ -27,28 +27,35 @@ This is a responsive shopping cart interface built with React. Users can add, re
 
 ---
 
-## What I Practiced
+## How It Works
 
-- **State Management**
-
-  - Liftting and sharing state between components
-  - Conditonal rendering using the ternary operator
-  - Rendering lists from arrays
-
----
+- Cart state is owned at the top level and passed down via props to product and cart components.
+- When an item is added, the cart checks if it already exists and either increments the quantity or adds a new entry.
+- Order total is derived from cart state rather than stored separately.
+- The confirmation modal visibility is controlled via state.
+- A side effect locks body scroll when the modal is open using `useEffect`.
 
 ## Tech Stack
 
-- React
+- React 19
 - Vite
 - SCSS
 - JSON (data)
 
 ---
 
-## 🧠 Thoughts
+## 🧠 Reflections
 
-This project helped me to think about how we derive values or render components based on state, rather than relying on imperative DOM manipulation.
+This project reinforced the importance of deriving UI from state rather than manipulating the DOM directly.
 
-I also discovered the `useEffect` hook, this allowed me to lock scrolling on the body when the user opened the modal window, since body was outside the component tree, I needed this side effect to happen manually when the overlay changed.
-The second use was with calculating the order total when the cart changes, I used this hook to recalcaulate the total whenever the number of cart items state changed. This kept the total in sync whenever items were added or deleted or the quantitiy changed.
+I used `useEffect` in two key scenarios:
+
+- Locking body scroll when the modal is open (side effect outside the React tree).now
+- Recalculating order totals whenever cart state changes to keep derived values in sync.
+
+This helped me better understand how React separates rendering logic from side effects.
+
+## Run Locally
+
+npm install
+npm run dev
