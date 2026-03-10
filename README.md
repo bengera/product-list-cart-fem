@@ -1,6 +1,6 @@
 # 🛒 Product Shopping Cart
 
-**React-based responsive shopping cart interface**
+**Responsive shopping cart interface built with React**
 
 [ Front End Mentor Challenge](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)
 <br>
@@ -8,9 +8,12 @@
 
 ---
 
+![App demo](./preview.gif)
+
 ## Overview
 
-This is a responsive shopping cart interface built with React. Users can add, remove or adjust the quantity of items and confirm their order through a modal window. This project was built in order to practice one of React's core concepts: `useState`.
+This project was built to practice core React concepts including state management, derived data, and component communication.
+The cart state is managed centrally and shared between components to ensure the UI stays synchronized when items are added, removed, or updated.
 
 ---
 
@@ -19,17 +22,17 @@ This is a responsive shopping cart interface built with React. Users can add, re
 
 ## Features
 
-- **Product List** – Display and render items from a JSON file
-- **Cart System** – Add/remove items, update quantities, and view totals
+- **Product List Rendering** – Product items loaded from a JSON data source and dynamically rendered
+- **Cart State Management** – Add, remove items, update quantities, and view totals
 - **Order Modal** – Confirmation UI with full cart summary and reset logic
-- **Responsive Design** – Image switching via `<picture>` tag and em-based breakpoints
-- **React Hooks** – `useState` and `useEffect` used for interactivity
+- **Responsive Layout** – Uses `<picture>` for responsive images and em-based breakpoints.
+- **React Hooks** – `useState` for state management and `useEffect` used for side effects.
 
 ---
 
 ## How It Works
 
-- Cart state is owned at the top level and passed down via props to product and cart components.
+- Cart state is owned by the top level `App` component and passed down to child components via props. This ensures a single source of truth.
 - When an item is added, the cart checks if it already exists and either increments the quantity or adds a new entry.
 - Order total is derived from cart state rather than stored separately.
 - The confirmation modal visibility is controlled via state.
@@ -50,12 +53,22 @@ This project reinforced the importance of deriving UI from state rather than man
 
 I used `useEffect` in two key scenarios:
 
-- Locking body scroll when the modal is open (side effect outside the React tree).now
-- Recalculating order totals whenever cart state changes to keep derived values in sync.
+- to handle UI side effects such as locking body scroll when the modal is open.
+- Recalculating order total whenever cart state changes to keep derived values in sync.
 
 This helped me better understand how React separates rendering logic from side effects.
 
+## Component Structure
+
+App
+├── ProductList
+│ └── ProductCard
+├── Cart
+└── Modal
+
 ## Run Locally
 
+```bash
 npm install
 npm run dev
+```

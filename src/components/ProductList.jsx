@@ -4,8 +4,8 @@ export function ProductList({ products, cartItems, setCartItems }) {
       prev.map((cartItem) =>
         cartItem.id === item.name
           ? { ...cartItem, quantity: cartItem.quantity + 1 }
-          : cartItem
-      )
+          : cartItem,
+      ),
     );
   }
 
@@ -14,8 +14,8 @@ export function ProductList({ products, cartItems, setCartItems }) {
       prev.map((cartItem) =>
         cartItem.id === item.name && cartItem.quantity > 1
           ? { ...cartItem, quantity: cartItem.quantity - 1 }
-          : cartItem
-      )
+          : cartItem,
+      ),
     );
   }
 
@@ -29,7 +29,7 @@ export function ProductList({ products, cartItems, setCartItems }) {
     };
 
     const existingItem = cartItems.find(
-      (cartItem) => cartItem.id === item.name
+      (cartItem) => cartItem.id === item.name,
     );
 
     if (existingItem) return;
@@ -42,7 +42,7 @@ export function ProductList({ products, cartItems, setCartItems }) {
     <div className="product-list">
       {products.map((item, idx) => {
         const isInCart = cartItems.some(
-          (cartItem) => cartItem.id === item.name
+          (cartItem) => cartItem.id === item.name,
         );
 
         return (
@@ -115,7 +115,7 @@ export function ProductList({ products, cartItems, setCartItems }) {
               ) : (
                 <button
                   className="button product-item__button"
-                  onClick={() => handleAddItem(item, idx)}
+                  onClick={() => handleAddItem(item)}
                 >
                   <img
                     src="\assets\images\icon-add-to-cart.svg"

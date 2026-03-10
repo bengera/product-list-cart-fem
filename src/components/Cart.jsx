@@ -1,7 +1,7 @@
 export function Cart({ cartItems, setCartItems, setOverlay, orderTotal }) {
   function removeItem(itemToRemove) {
     const updatedArr = cartItems.filter(
-      (cartItem) => cartItem.id !== itemToRemove.id
+      (cartItem) => cartItem.id !== itemToRemove.id,
     );
     setCartItems(updatedArr);
   }
